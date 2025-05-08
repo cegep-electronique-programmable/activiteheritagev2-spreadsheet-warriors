@@ -12,6 +12,9 @@
 
 #include "Etudiant.h"
 
+
+
+
 //Définition de la méthode setMatricule de la classe, permet de modifier le matricule de l'étudiant
 void Etudiant::setMatricule(int nouveauMatricule){
     //Le numero de matricule doit necessairement avoir 7 chiffres
@@ -40,4 +43,18 @@ void Etudiant::setMoyenne(int nouvelleMoyenne){
 
 int Etudiant::getMoyenne(void){
     return (this->moyenne);
+}
+
+
+
+void Etudiant_admin::setscout(float nouvellescout)
+{
+
+    this->scout=nouvellescout;
+    
+}
+
+float Etudiant_admin::getscout()
+{
+    return (this->scout);
 }
