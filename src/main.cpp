@@ -12,7 +12,7 @@
  *      7 mai 2025
  *  
  * 
- *  not work :(
+ *  not work ;(
  */
 
 #include <Arduino.h>
