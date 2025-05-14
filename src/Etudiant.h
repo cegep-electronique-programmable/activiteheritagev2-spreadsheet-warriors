@@ -10,10 +10,11 @@
  *  
  */
 
+
 #ifndef ETUDIANT_H
 #define ETUDIANT_H
 
-//Déclaration de la classe Etudiant
+
 class Etudiant {
     int numeroMatricule;
     int moyenne;
@@ -25,4 +26,26 @@ public:
     int getMoyenne();
 };
 
+class EtudiantArtLettre : public Etudiant {
+    int numeroMatricule;
+    int nbrLivresLus;
+	
+public:
+    void setMatricule(int);
+    int getMatricule();
+    void setNbrLivresLus(int);
+    int getNbrLivresLus();
+};
+
+class EtudiantAdmin: public Etudiant
+{
+    float CoutSession1;
+    int numeroMatricule;
+	
+public:
+    void setMatricule(int);
+    int getMatricule();
+    void setCoutSession1(float);
+    float getCoutSession1();
+};
 #endif //ETUDIANT_H
