@@ -15,13 +15,12 @@
 
 #include <Arduino.h>
 #include <iostream>
-#include "Etudiant.h"
+#include "EtudiantArtLettre.h"
 
 //********************************************************************************
 // Déclaration des fonctions
 //********************************************************************************
 void testEtudiant(void);
-
 
 //********************************************************************************
 // Déclartions des variables globales
@@ -37,7 +36,7 @@ void setup() {
   printf("Hello world !\n\n");
 
   pinMode(LED_BUILTIN, OUTPUT);   // DEL embarqué configuré en sortie
-
+  
   testEtudiant();  
 }
 
@@ -48,6 +47,7 @@ void setup() {
 void loop() {
 
   digitalWrite(LED_BUILTIN, !digitalRead(LED_BUILTIN));   //Changer état de la DEL
+  
 
   delay(1000);                                            //Attendre une seconde
 }
@@ -68,5 +68,19 @@ void testEtudiant(void) {
   numeroMatriculeTmp = owen.getMatricule();
   moyenneTmp = owen.getMoyenne(); 
   printf("Owen, matricule # %d, moyenne %d\n", numeroMatriculeTmp, moyenneTmp);
+
+}
+
+void testEtudiantArtLettre(void) {
+  int numeroMatriculeTmp;
+  int moyenneTmp;
+
+  EtudiantArtLettre Godson;
+  Godson.setMatricule(7288053);
+  Godson.setMoyenne(99);
+
+  numeroMatriculeTmp = Godson.getMatricule();
+  moyenneTmp = Godson.getMoyenne(); 
+  printf("Godson, matricule # %d, moyenne %d\n", numeroMatriculeTmp, moyenneTmp);
 
 }
