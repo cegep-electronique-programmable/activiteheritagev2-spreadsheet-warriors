@@ -54,7 +54,11 @@ void EtudiantArtLettre::setMatricule(int nouveauMatricule){
     }
 }
 
-void EtudiantArtLettre::NbrLivresLus(int nouveauNbrLivresLus){
+int EtudiantArtLettre::getMatricule(void){
+    return (this->numeroMatricule);
+}
+
+void EtudiantArtLettre::setNbrLivresLus(int nouveauNbrLivresLus){
     //Le numero de matricule doit necessairement avoir 7 chiffres
     if ((nouveauNbrLivresLus >= 0000) && (nouveauNbrLivresLus <= 9999)){
         this->nbrLivresLus = nouveauNbrLivresLus;    
@@ -63,3 +67,8 @@ void EtudiantArtLettre::NbrLivresLus(int nouveauNbrLivresLus){
         this->nbrLivresLus = 0; //Le matricule est mis à 0 si le matricule n'est pas valide
     }
 }
+
+int EtudiantArtLettre::getNbrLivresLus(void){
+    return (this->nbrLivresLus);
+}
+

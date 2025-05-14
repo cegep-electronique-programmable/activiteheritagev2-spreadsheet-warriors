@@ -74,13 +74,16 @@ void testEtudiant(void) {
 void testEtudiantArtLettre(void) {
   int numeroMatriculeTmp;
   int moyenneTmp;
+  int NbrLivresLusTmp;
 
   EtudiantArtLettre Godson;
   Godson.setMatricule(7288053);
   Godson.setMoyenne(99);
+  Godson.setNbrLivresLus(15);
 
   numeroMatriculeTmp = Godson.getMatricule();
   moyenneTmp = Godson.getMoyenne(); 
-  printf("Godson, matricule # %d, moyenne %d\n", numeroMatriculeTmp, moyenneTmp);
+  NbrLivresLusTmp = Godson.getNbrLivresLus();
+  printf("Godson, matricule # %d, moyenne %d, livres lus %d\n", numeroMatriculeTmp, moyenneTmp, NbrLivresLusTmp);
 
 }

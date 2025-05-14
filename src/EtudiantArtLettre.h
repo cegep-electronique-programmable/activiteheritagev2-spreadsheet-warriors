@@ -32,8 +32,9 @@ class EtudiantArtLettre : public Etudiant {
 	
 public:
     void setMatricule(int);
+    int getMatricule();
     void setNbrLivresLus(int);
-    int  getNbrLivresLus();
+    int getNbrLivresLus();
 };
 
 
