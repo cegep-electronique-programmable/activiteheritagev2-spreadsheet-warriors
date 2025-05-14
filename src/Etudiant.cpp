@@ -11,33 +11,39 @@
  */
 
 #include "Etudiant.h"
+#include <Etudiant.h>
 
-//Définition de la méthode setMatricule de la classe, permet de modifier le matricule de l'étudiant
-void Etudiant::setMatricule(int nouveauMatricule){
-    //Le numero de matricule doit necessairement avoir 7 chiffres
-    if ((nouveauMatricule >= 1000000) && (nouveauMatricule <= 9999999)){
-        this->numeroMatricule = nouveauMatricule;    
+
+void Etudiant::setMatricule(int num){
+    numeroMatricule = num;
+}
+
+int Etudiant::getMatricule() const {
+    return numeroMatricule;
+}
+
+void Etudiant::setMoyenne(int m){
+    moyenne = m;
+}
+
+int Etudiant::getMoyenne() const{
+    return moyenne;
+}
+
+void Etudiant::setMatricule(int num){
+    if (String(num) .startWith("2")){
+        Etudiant::setMatricule(num);
     }
-    else{
-        this->numeroMatricule = 0; //Le matricule est mis à 0 si le matricule n'est pas valide
+    else
+    {
+        Serial.println("Erreur");
     }
 }
 
-
-
-int Etudiant::getMatricule(void){
-    return (this->numeroMatricule);
+void EtudianTGE::setMaitriseOscillo(bool maitrise){
+    maitriseOscillo = maitrise;
 }
 
-void Etudiant::setMoyenne(int nouvelleMoyenne){
-    if (nouvelleMoyenne <= 100){
-        this->moyenne = nouvelleMoyenne;
-    }
-    else{
-        this->moyenne = 100;
-    }
-}
-
-int Etudiant::getMoyenne(void){
-    return (this->moyenne);
+bool EtudianTGE::getMaitriseOscillo() const {
+    return maitriseOscillo;
 }
