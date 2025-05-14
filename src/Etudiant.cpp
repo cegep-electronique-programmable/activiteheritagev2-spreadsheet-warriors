@@ -45,16 +45,31 @@ int Etudiant::getMoyenne(void){
     return (this->moyenne);
 }
 
-
-
-void Etudiant_admin::setscout(float nouvellescout)
-{
-
-    this->scout=nouvellescout;
-    
+void EtudiantAdmin::setMatricule(int nouveauMatricule){
+    //Le numero de matricule doit necessairement avoir 7 chiffres
+    if ((nouveauMatricule >= 5000000) && (nouveauMatricule <= 5999999)){
+        this->numeroMatricule = nouveauMatricule;    
+    }
+    else{
+        this->numeroMatricule = 0; //Le matricule est mis à 0 si le matricule n'est pas valide
+    }
 }
 
-float Etudiant_admin::getscout()
+int EtudiantAdmin::getMatricule(void){
+    return (this->numeroMatricule);
+}
+
+void EtudiantAdmin::setCoutSession1(float nouvelleCoutSession1)
 {
-    return (this->scout);
+    if ((nouvelleCoutSession1 >= 0000) && (nouvelleCoutSession1 <= 9999)){
+        this->CoutSession1=nouvelleCoutSession1;    
+    }
+    else{
+        this->CoutSession1 = 0; //Le matricule est mis à 0 si le matricule n'est pas valide
+    }
+}
+
+float EtudiantAdmin::getCoutSession1()
+{
+    return (this->CoutSession1);
 }

@@ -21,6 +21,7 @@
 // Déclaration des fonctions
 //********************************************************************************
 void testEtudiant(void);
+void testEtudiantAdmin(void);
 
 
 //********************************************************************************
@@ -38,7 +39,8 @@ void setup() {
 
   pinMode(LED_BUILTIN, OUTPUT);   // DEL embarqué configuré en sortie
 
-  testEtudiant();  
+  testEtudiant();
+  testEtudiantAdmin();  
 }
 
 
@@ -68,5 +70,21 @@ void testEtudiant(void) {
   numeroMatriculeTmp = owen.getMatricule();
   moyenneTmp = owen.getMoyenne(); 
   printf("Owen, matricule # %d, moyenne %d\n", numeroMatriculeTmp, moyenneTmp);
+
+}
+
+void testEtudiantAdmin(void) {
+  int numeroMatriculeTmp;
+  int moyenneTmp;
+  float CoutSession1Tmp;
+  EtudiantAdmin Wilken;
+  Wilken.setMatricule(2288053);
+  Wilken.setMoyenne(99);
+  Wilken.setCoutSession1(10.50);
+
+  numeroMatriculeTmp = Wilken.getMatricule();
+  moyenneTmp = Wilken.getMoyenne();
+  CoutSession1Tmp = Wilken.getCoutSession1(); 
+  printf("Wilken's, matricule # %d, moyenne %d, Cout %f\n", numeroMatriculeTmp, moyenneTmp, CoutSession1Tmp );
 
 }
